@@ -1,0 +1,37 @@
+.body{
+    background-color: rgb(229 231 235);
+}
+.main{
+    height: 100%;
+    width: 100%;
+    background-color: pink;
+    max-width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+@media (width>1000px){
+    .main{
+        display: flex;
+        flex-direction: row;
+    }
+}
+.checkout-image{
+    max-width: 1020px;
+    max-height:250px;
+    object-fit: contain;
+}
+.left-side{
+    flex-grow: 1;
+    margin: 20px;
+}
+.shopping-basket{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 2.5rem;
+    background-color: white;
+    padding-bottom: 16px;
+    border-bottom: 1px solid black;
+}
