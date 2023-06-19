@@ -2,11 +2,12 @@ import "./App.css";
 import Navbar from "./Components/Navbar";
 import Banner from "./Components/Banner";
 import ProductFeed from "./Components/ProductFeed";
-import Checkout from "./Components/Checkout.jsx";
+import CategoryState from "./context/category/categoryState";
 
 import { useState, useEffect } from "react";
-
-
+import RatingState from "./context/rating/ratingState";
+import ColorState from "./context/color/colorState";
+import PriceState from "./context/price/priceState";
 function App() {
   const [item, setItem] = useState([]);
 
@@ -17,11 +18,19 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <Navbar />
-      <Banner />
-      <ProductFeed products={item} />
-    </div>
+    <CategoryState>
+      <RatingState>
+      <ColorState>
+      <PriceState>
+      <div className="App">
+          <Navbar />
+          <Banner />
+          <ProductFeed products={item} />
+        </div>
+        </PriceState>
+      </ColorState>
+      </RatingState>
+    </CategoryState>
   );
 }
 

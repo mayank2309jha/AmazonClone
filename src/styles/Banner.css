@@ -2,17 +2,16 @@
     width: 100%;
     margin-top: 0;
     position: absolute;
-    top: 13vh;
+    top: 104px;
 }
 .carousel-button{
-    height: 100px;
+    height: 80px;
     width: auto;
     position: absolute;
-    top: 30%;
-    z-index: 10;
+    top: 20%;
     cursor: pointer;
     user-select: none;
-    font-size: 3rem;
+    font-size: 2rem;
     color: #000000;
     opacity: 0.2;
 }
@@ -47,6 +46,11 @@
 @media (width <= 800px){
     .image{
         height: 400px;
+    }
+}
+@media (width<770px){
+    .carousel{
+        top: 113px;
     }
 }
 @media (width <= 600px){

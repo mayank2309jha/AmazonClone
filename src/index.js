@@ -1,12 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
 
 import Checkout from "./Components/Checkout.jsx";
 import ErrorPage from "./Components/ErrorPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
+import CartState from "./context/cart/cartState";
+import ProductState from "./context/product/productState";
 
 const router = createBrowserRouter([
   {
@@ -15,14 +16,18 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-      path: "/checkout",
-      element: <Checkout/>
-  }
+    path: "/checkout",
+    element: <Checkout />,
+  },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <div className = "index">
-    <RouterProvider router = {router}/>
-    </div>
+  <div className="index">
+    <CartState>
+      <ProductState>
+          <RouterProvider router={router} />
+      </ProductState>
+    </CartState>
+  </div>
 );
